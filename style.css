@@ -1,0 +1,261 @@
+:root{
+    --light-grey:rgba(209, 209, 209, 0.333);
+    /* --input-border-color: rgba(150, 150, 150, 0.605);  */
+    --input-border-color: rgba(150, 150, 150, 0.441); 
+    --footer-bg: rgb(242, 242, 242);
+}
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 60px 1fr 100px;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.principalHeader{
+    font-size: 1.2rem;
+    /* height: 80px; */
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.principalHeader-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.principalHeader-list li {
+    margin-right: 18px;
+}
+
+.principalHeader-list li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.principalHeader-list li a:hover{
+    text-decoration: underline;
+}
+
+.principalHeader-list .borderRadius{
+    padding: 8px;
+    border-radius: 50%;
+    /* background-color: lightslategray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+}
+
+.principalHeader-list .borderRadius:hover{
+    cursor: pointer;
+    background-color: var(--light-grey)
+}
+
+.principalHeader-list li.icon img {
+    width: 70%;
+}
+
+.principalHeader-list li.userImg {
+    padding: 0;
+}
+
+.principalHeader-list li.userImg img {
+    width: 80%;
+    border-radius: 50%;
+}
+
+.principalMain {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+}
+
+.principalMain-section{
+    display: grid;
+    gap: 22px;
+    justify-items: center;
+    width: 100%;
+    position: relative;
+    top: -80px;
+    /* border: 1px solid #000; */
+}
+
+.principalMain-form{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+}
+
+.principalMain-form_searchInput {
+    border: 1px solid var(--input-border-color);
+    border-radius: 50px;
+    /* padding: 12px 18px; */
+    padding: 13px 22px;
+    width: 80%;
+    max-width: 580px;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.principalMain-form_searchInput:hover{
+    box-shadow: 0px 0px 5px 2px var(--input-border-color);
+}
+
+
+.principalMain-form_searchInput .iconSearch{
+    color: var(--input-border-color);
+    margin-right: 12px;
+    position: relative;
+    left: -5px;
+}
+
+.principalMain-form_input{
+    font-size: 1.6rem;
+}
+
+.principalMain-form_input:focus{
+    outline:none;
+}
+
+.principalMain-form_input{
+    border: none;
+}
+
+.principalMain-form_searchInput .iconMicro{
+    font-size: 1.8rem;
+}
+
+.principalMain-form_searchInput .iconMicro:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+.principalMain-form_buttonWrapper{
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    min-width: 350px;
+}
+
+.principalMain-form_buttonWrapper button {
+    padding: 10px 16px;
+    border: none;
+    font-size: 1.4rem;
+    color: rgb(49, 49, 49);
+    background-color: rgba(0, 0, 0, 0.022);
+    margin-right: 12px;
+    border-radius: 5px;
+}
+
+.principalMain-form_buttonWrapper button:hover{
+    cursor: pointer;
+    border: 1px solid var(--input-border-color);
+    box-shadow: 0px 0px 1px 1px var(--light-grey)
+}
+
+.principalFooter{
+    display: grid;
+    font-size: 1.4rem;
+    color: rgb(115, 115, 115);
+    grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid var(--input-border-color);
+}
+
+.principalFooter > div {
+    width: 100%;
+    background-color: var(--footer-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.principalFooter > div ul {
+    list-style: none;
+    display: flex;
+}
+
+.principalFooter > div ul li {
+    margin-right: 24px;
+}
+
+.principalFooter > div ul li a {
+    text-decoration: none;
+    color: rgb(115, 115, 115);;
+}
+
+.principalFooter > div ul li a:hover{
+    text-decoration: underline;
+}
+
+.principalFooter-pais{
+    
+    border-bottom: 1px solid rgb(222, 222, 222);
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media (max-width:750px){
+
+    body{
+        grid-template-rows: 60px 1fr auto;
+    }
+
+    .principalFooter{
+        grid-template-rows: auto 1fr;
+    }
+
+    .principalFooter-pais{
+        height: 40px;
+    }
+
+    .principalFooter .info{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 24px;
+        padding: 24px 0;
+        justify-content: center;
+    }
+    .principalFooter .info > ul{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width:482px){
+    .margin-up{
+        margin-top: 28px;
+    }
+}
+
+
